@@ -1,0 +1,54 @@
+{
+  "_args": [
+    [
+      "ozimnad-reset@0.1.0",
+      "D:\\OSPanel\\domains\\screen-solutions"
+    ]
+  ],
+  "_from": "ozimnad-reset@0.1.0",
+  "_id": "ozimnad-reset@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-fDwc3UgErEJ8gRbYJmbzK0fj2jnEyGUWy5187H3dfulPhiSaJtVihWf3CxmS1qnwRcWvcTF99XBGx+xWETSNcg==",
+  "_location": "/ozimnad-reset",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "ozimnad-reset@0.1.0",
+    "name": "ozimnad-reset",
+    "escapedName": "ozimnad-reset",
+    "rawSpec": "0.1.0",
+    "saveSpec": null,
+    "fetchSpec": "0.1.0"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/ozimnad-reset/-/ozimnad-reset-0.1.0.tgz",
+  "_spec": "0.1.0",
+  "_where": "D:\\OSPanel\\domains\\screen-solutions",
+  "author": {
+    "name": "Ozimnadius"
+  },
+  "bugs": {
+    "url": "https://github.com/Ozimnadius/ozimnad-reset/issues"
+  },
+  "description": "Simple css reset",
+  "homepage": "https://github.com/Ozimnadius/ozimnad-reset#readme",
+  "keywords": [
+    "ozimnad",
+    "reset"
+  ],
+  "license": "MIT",
+  "main": "src/ozimnad-reset.css",
+  "name": "ozimnad-reset",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ozimnadius/ozimnad-reset.git"
+  },
+  "scripts": {
+    "build": "webpack",
+    "dev": "webpack --mode development"
+  },
+  "version": "0.1.0"
+}

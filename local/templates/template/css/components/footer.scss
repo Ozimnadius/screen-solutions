@@ -1,0 +1,88 @@
+@use "../core/ui/mixins" as ui;
+
+.footer {
+  background: #EFEFEF;
+
+  &__top{
+    padding-top: 45px;
+    padding-bottom: 70px;
+    position: relative;
+  }
+  &__top-grid{
+    display:grid;
+    grid-template-columns: 5fr 4fr 3fr;
+    gap: 20px;
+  }
+  &__up{
+    width: 60px;
+    position: absolute;
+    top: 60px;
+    left: calc(100% + 70px);
+  }
+  &__left{
+    display:grid;
+    gap: 40px;
+  }
+  &__logo{}
+  &__desc{
+    max-width: 430px;
+    font-size: 18px;
+  }
+  &__center{
+    padding-top: 24px;
+  }
+  &__phone{
+    a{
+      font-size: 34px;
+      font-weight: 600;
+      line-height: 1;
+    }
+  }
+  &__mail{
+    a{
+      font-size: 20px;
+      font-weight: 500;
+      color: var(--Blue);
+    }
+  }
+  &__right{
+    padding-top: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+  }
+  &__addr{
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__map{
+    a{
+      display: inline-block;
+      font-size: 20px;
+      text-decoration: underline;
+      color: var(--Blue);
+    }
+  }
+  &__bottom{
+    background: #1A62C4;
+    padding: 20px 0;
+    color: var(--White);
+    font-size: 20px;
+  }
+  &__bottom-row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__copyright{
+    font-size: 20px;
+  }
+  &__policy{
+
+    a{
+      font-size: 14px;
+      text-decoration: underline;
+    }
+  }
+}

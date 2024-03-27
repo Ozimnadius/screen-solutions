@@ -1,0 +1,59 @@
+include mixins
+include settings
+block variables
+
+doctype html
+html(lang="ru")
+    head
+        meta(charset="utf-8")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+
+        title #{(title) ? title : 'Page'}
+
+        link(rel="apple-touch-icon" sizes="180x180" href="/local/favicon/apple-touch-icon.png")
+        link(rel="icon" type="image/png" sizes="32x32" href="/local/favicon/favicon-32x32.png")
+        link(rel="icon" type="image/png" sizes="16x16" href="/local/favicon/favicon-16x16.png")
+        link(rel="manifest" href="/local/favicon/site.webmanifest")
+        meta(name="msapplication-TileColor" content="#da532c")
+        meta(name="theme-color" content="#ffffff")
+
+        //-Сюда надо добавлять шрифты для более быстрой загрузки.
+        //-link(rel="preload" href="/fonts/Font.woff2" as="font" type="font/woff2" crossorigin)
+        link(rel='stylesheet' href='/local/templates/template/css/libs.css')
+        link(rel='stylesheet' href='/local/templates/template/styles.css')
+        // Для изменений после верстки
+        link(rel='stylesheet' href='/local/templates/template/template_styles.css')
+
+        script(defer src='/local/templates/template/js/libs.min.js')
+        script(defer src='/local/templates/template/js/script.js')
+    body.page
+        .wrapper
+            .wrapper__header
+                .container
+                    include ../components/header/index
+
+            .wrapper__content
+                if !mainPage
+                    .container
+                        .page__breadcrumbs
+                                include ../components/breadcrumbs/index
+                        if showTitle
+                            h1.page__title= title
+                        .page__grid
+                            if showAside
+                                .page__aside
+                                    block aside
+                            .page__main
+                                if contentPage
+                                    .page__content.content
+                                        block content
+                                else
+                                    block content
+
+            .wrapper__footer
+                include ../components/footer/index
+
+
+
+
+

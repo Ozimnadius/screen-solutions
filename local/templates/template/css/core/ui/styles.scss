@@ -1,0 +1,21 @@
+@use "mixins" as ui;
+
+.content {
+  @include ui.content;
+}
+
+.container {
+  @include ui.container;
+  max-width: var(--container-width);
+  padding: var(--container-padding);
+}
+
+
+@for $i from 1 through 20 {
+  .mt-#{$i}0 {
+    margin-top: calc(var(--spacing) * $i) !important;
+  }
+  .mb-#{$i}0 {
+    margin-bottom: calc(var(--spacing) * $i) !important;
+  }
+}

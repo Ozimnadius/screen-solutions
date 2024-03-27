@@ -1,0 +1,5 @@
+mixin image(imagePath='', imageClass='', imageAlt='img')
+    img(src=`${imagePath}`, alt=`${alt}`, class=`${imageClass}`)
+
+mixin btn(cls='btn', href='/', attr='', name='Button')
+    a(class=`${cls}`, href=`${href}`, #{${attr}})= name
