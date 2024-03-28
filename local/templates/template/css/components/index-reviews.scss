@@ -1,27 +1,57 @@
+@use "../core/ui/mixins" as ui;
+
 .index-reviews {
-  &__title{
+  &__title {
     font-weight: 500;
     font-size: 40px;
     padding-bottom: 34px;
     margin-bottom: 40px;
     border-bottom: 2px solid var(--blue);
     text-align: center;
+    @include ui.lg-block {
+      padding-bottom: 20px;
+      margin-bottom: 35px;
+    }
+    @include ui.sm-block {
+      font-size: 24px;
+      padding-bottom: 5px;
+      margin-bottom: 30px;
+    }
   }
-  &__items{
-    display:grid;
-    grid-template-columns: repeat(4,1fr);
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px 20px;
+    @include ui.lg-block {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include ui.sm-block{
+        grid-template-columns: 1fr;
+    }
+  }
+
+  &__item {
+    display: grid;
     gap: 20px;
+    @include ui.xlg-block {
+      gap: 10px;
+    }
   }
-  &__item{
-    display:grid;
-    gap: 20px;
-  }
-  &__name{
+
+  &__name {
     font-weight: 500;
     font-size: 24px;
+    @include ui.xlg-block {
+      font-size: 20px;
+    }
   }
-  &__desc{
+
+  &__desc {
     font-size: 18px;
     color: #3f3f3f;
+    @include ui.xlg-block {
+      font-size: 16px;
+    }
   }
 }

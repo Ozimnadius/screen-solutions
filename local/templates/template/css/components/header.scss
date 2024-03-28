@@ -1,36 +1,74 @@
 @use "../core/ui/mixins" as ui;
+
 .header {
   padding-top: 30px;
   padding-bottom: 20px;
-  display:grid;
+  display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
   gap: 20px;
+  @include ui.lg-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+  }
+  @include ui.sm-block{
+    padding: 15px 0;
+  }
 
-  &__left{}
-  &__logo{
-    a{
+  &__left {
+    @include ui.lg-block {
+      margin-right: auto;
+    }
+  }
+
+  &__logo {
+    @include ui.xlg-block {
+      max-width: 220px;
+    }
+    @include ui.sm-block{
+      max-width: 172px;
+    }
+
+    a {
       @include ui.hover-opacity;
       display: block;
     }
   }
-  &__menu{
+
+  &__menu {
     display: flex;
     justify-content: center;
     gap: 10px;
     align-items: center;
+    @include ui.lg-block {
+      order: 1;
+    }
+    @include ui.sm-block{
+        gap: 0;
+    }
 
   }
-  &__item{
+
+  &__item {
     padding: 8px 17px;
     border-radius: 100vmax;
     border: 1px solid var(--blue);
     position: relative;
     font-weight: 600;
     font-size: 18px;
+    white-space: nowrap;
     @include ui.tr;
+    @include ui.xlg-block {
+      padding: 6px 14px;
+    }
+    @include ui.sm-block{
+      font-size: 12px;
+      padding: 4px 9px;
+    }
 
-    &:before{
+    &:before {
       content: '';
       display: block;
       width: 11px;
@@ -40,38 +78,50 @@
       top: 50%;
       left: 100%;
       transform: translateY(-50%);
+      @include ui.md-block{
+        display: none;
+      }
     }
 
-    &:last-child{
-      &:before{
+    &:last-child {
+      &:before {
         display: none;
       }
     }
 
     &:hover {
-        @media (hover: hover) and (pointer: fine) {
-          border-color: var(--red);
-          color: var(--red);
-        }
+      @media (hover: hover) and (pointer: fine) {
+        border-color: var(--red);
+        color: var(--red);
+      }
     }
   }
-  &__right{
+
+  &__right {
     display: flex;
     flex-direction: column;
     align-items: end;
     gap: 4px;
   }
-  &__phone{
-    a{
+
+  &__phone {
+    a {
       @include ui.hover-red;
       font-weight: 600;
       font-size: 34px;
       line-height: 1;
       display: block;
+      @include ui.xlg-block {
+        font-size: 26px;
+      }
+      @include ui.sm-block{
+        font-size: 16px;
+      }
     }
   }
-  &__callback{
-    a{
+
+  &__callback {
+    a {
       @include ui.hover-red;
       font-weight: 600;
       font-size: 18px;
@@ -79,6 +129,12 @@
       text-decoration-line: underline;
       color: var(--blue);
       display: block;
+      @include ui.xlg-block {
+        font-size: 16px;
+      }
+      @include ui.sm-block{
+        font-size: 10px;
+      }
     }
   }
 }

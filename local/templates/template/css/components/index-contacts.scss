@@ -1,17 +1,26 @@
 @use "../core/ui/mixins" as ui;
 @use "sass:math";
+
 .index-contacts {
   &__title {
     font-weight: 500;
     font-size: 40px;
     margin-bottom: 35px;
     text-align: center;
+    @include ui.sm-block{
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
   }
 
   &__row {
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+    @include ui.sm-block {
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
   }
 
   &__left {
@@ -24,6 +33,12 @@
     border-radius: var(--border-radius);
     overflow: hidden;
     border: 2px solid var(--blue);
+    @include ui.lg-block {
+      height: 553px;
+    }
+    @include ui.md-block {
+      height: 388px;
+    }
 
     #index-map {
       position: absolute;
@@ -31,9 +46,9 @@
       border-radius: var(--border-radius);
       overflow: hidden;
 
-      [class*="copyrights-pane"] {
-        display: none !important;
-      }
+      //[class*="copyrights-pane"] {
+      //  display: none !important;
+      //}
 
       [class*="ground-pane"] {
         filter: grayscale(1);
@@ -50,6 +65,15 @@
     background: url("/upload/images/content/index-contacts/bg.jpg") center center no-repeat;
     border-radius: var(--border-radius);
     overflow: hidden;
+    @include ui.xlg-block {
+      padding: 20px 40px;
+    }
+    @include ui.md-block {
+      padding: 20px 30px;
+    }
+    @include ui.sm-block{
+      height: 388px;
+    }
   }
 
   &__company {
@@ -60,25 +84,45 @@
     font-weight: 500;
     font-size: 36px;
     margin-bottom: 6px;
+    @include ui.lg-block {
+      font-size: 28px;
+    }
+    @include ui.md-block {
+      font-size: 20px;
+      margin-bottom: 2px;
+    }
   }
 
   &__addr {
     font-size: 23px;
     margin-bottom: 15px;
+    @include ui.lg-block {
+      font-size: 20px;
+      margin-bottom: 6px;
+    }
+    @include ui.md-block {
+      font-size: 16px;
+    }
   }
 
   &__phone {
-    a{
+    a {
       @include ui.hover-red;
       font-weight: 600;
       font-size: 36px;
+      @include ui.md-block {
+        font-size: 24px;
+      }
     }
   }
 
   &__mail {
-    a{
+    a {
       @include ui.hover-red;
       font-size: 23px;
+      @include ui.md-block {
+        font-size: 20px;
+      }
     }
   }
 }

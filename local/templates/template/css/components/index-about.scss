@@ -1,25 +1,34 @@
 @use "../core/ui/mixins" as ui;
 @use "sass:math";
-.index-about{
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
+
+.index-about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   align-items: center;
+  @include ui.md-block {
+    align-items: start;
+  }
+  @include ui.sm-block{
+      grid-template-columns: 1fr;
+  }
 
-  &__left{}
-  &__video{
+  &__left {
+  }
+
+  &__video {
     position: relative;
     border-radius: var(--border-radius);
     overflow: hidden;
     display: block;
 
-    &:before{
+    &:before {
       content: '';
       display: block;
-      padding-top: math.percentage(math.div(402,660));
+      padding-top: math.percentage(math.div(402, 660));
     }
 
-    img{
+    img {
       position: absolute;
       top: 0;
       left: 0;
@@ -28,7 +37,8 @@
       object-fit: cover;
     }
   }
-  &__btn{
+
+  &__btn {
     @include ui.hover-opacity;
     position: absolute;
     inset: 0;
@@ -41,24 +51,46 @@
     @include ui.tr;
 
   }
-  &__btn-svg{}
-  &__btn-name{
+
+  &__btn-svg {
+  }
+
+  &__btn-name {
     font-weight: 600;
     font-size: 15px;
     text-decoration: underline;
   }
-  &__right{
+
+  &__right {
     padding-left: 60px;
+    @include ui.xlg-block {
+      padding-left: 25px;
+    }
+    @include ui.lg-block {
+      padding-left: 0;
+    }
   }
-  &__title{
+
+  &__title {
     font-weight: 600;
     font-size: 26px;
+    @include ui.xlg-block {
+      font-size: 20px;
+    }
+    @include ui.lg-block {
+      font-size: 16px;
+    }
   }
-  &__content{
+
+  &__content {
     @include ui.content;
-    p{
+
+    p {
       font-weight: 500;
       font-size: 16px;
+      @include ui.lg-block {
+        font-size: 14px;
+      }
     }
   }
 }

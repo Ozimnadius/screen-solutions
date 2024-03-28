@@ -1,4 +1,5 @@
 @use "../core/ui/mixins" as ui;
+
 .index-banner {
   position: relative;
 
@@ -8,6 +9,16 @@
     top: 0;
     right: 0;
     color: var(--blue);
+    @include ui.lg-block {
+      width: 52px;
+    }
+    @include ui.md-block {
+      width: 42px;
+    }
+
+    a {
+      display: block;
+    }
 
     svg {
       path {
@@ -32,6 +43,13 @@
       position: absolute;
       bottom: 22px;
       right: 44px;
+      @include ui.xlg-block {
+        bottom: 30px;
+        right: 30px;
+      }
+      @include ui.lg-block {
+        display: none;
+      }
     }
   }
 
@@ -40,6 +58,21 @@
     top: 85%;
     left: 0;
     max-width: 670px;
+    @include ui.xlg-block {
+      max-width: 610px;
+    }
+    @include ui.lg-block {
+      max-width: 500px;
+    }
+    @include ui.md-block {
+      max-width: 410px;
+    }
+    @include ui.sm-block {
+      top: 90%;
+    }
+    @include ui.sm-block {
+      max-width: 100%;
+    }
   }
 
   &__title {
@@ -48,9 +81,29 @@
     line-height: 1.1;
     text-transform: uppercase;
     margin-bottom: 10px;
+    @include ui.lg-block {
+      font-size: 26px;
+    }
+    @include ui.md-block {
+      font-size: 22px;
+    }
+    @include ui.sm-block {
+      font-size: 16px;
+      margin-bottom: 6px;
+      max-width: 210px;
+    }
 
-    &--big{
+    &--big {
       font-size: 52px;
+      @include ui.xlg-block{
+        font-size: 34px;
+      }
+      @include ui.md-block{
+        font-size: 24px;
+      }
+      @include ui.sm-block{
+        font-size: 16px;
+      }
     }
   }
 
@@ -59,6 +112,14 @@
     align-items: center;
     justify-content: start;
     gap: 20px;
+    @include ui.lg-block {
+      flex-direction: column;
+      align-items: start;
+      gap: 15px;
+    }
+    @include ui.sm-block {
+      flex-direction: row;
+    }
   }
 
   &__text {
@@ -66,11 +127,25 @@
     font-size: 20px;
     line-height: 1.23;
     max-width: 440px;
+    @include ui.lg-block {
+      font-size: 16px;
+    }
+    @include ui.sm-block {
+      font-size: 12px;
+    }
   }
 
   &__btn {
     @include ui.btn-main;
     padding-left: 45px;
     padding-right: 45px;
+    @include ui.md-block {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
+    @include ui.sm-block {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 }

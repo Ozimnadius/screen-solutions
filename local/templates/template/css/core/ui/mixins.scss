@@ -180,6 +180,10 @@ $break_xs: 575.98px;
   height: 39px;
   border-radius: 100vmax;
   @include tr;
+  @include sm-block{
+    font-size: 14px;
+    height: 31px;
+  }
 
   svg {
 

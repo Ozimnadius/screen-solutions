@@ -1,42 +1,71 @@
 @use "../core/ui/mixins" as ui;
 
-.index-info{
+.index-info {
   max-width: 1100px;
   width: 100%;
   margin: 0 auto;
-  display:grid;
-  grid-template-columns: repeat(2,1fr);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   align-items: center;
+  @include ui.sm-block{
+      grid-template-columns: 1fr;
+  }
 
-  &__left{
+  &__left {
     display: flex;
     justify-content: center;
+    text-align: center;
+    @include ui.md-block{
+      text-align: left;
+    }
+    @include ui.sm-block{
+      text-align: center;
+      padding: 0 20px;
+    }
   }
-  &__title{
+
+  &__title {
     font-weight: 500;
     font-size: 48px;
     line-height: 1.31;
     color: #000;
     max-width: 430px;
-    i{
+    @include ui.xlg-block{
+      font-size: 36px;
+    }
+
+    i {
       font-style: italic;
       font-weight: 600;
       color: var(--blue);
     }
   }
-  &__right{
+
+  &__right {
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 30px;
+    @include ui.lg-block{
+        gap: 15px;
+    }
+    @include ui.sm-block{
+        align-items: center;
+      text-align: center;
+    }
   }
-  &__desc{
+
+  &__desc {
     font-weight: 500;
     font-size: 20px;
     color: #000;
+    @include ui.md-block{
+      font-size: 16px;
+    }
   }
-  &__btn{
+
+  &__btn {
     @include ui.btn-main;
     padding-left: 30px;
     padding-right: 30px;

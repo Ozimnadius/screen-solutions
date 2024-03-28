@@ -1,43 +1,95 @@
-.index{
-  padding-bottom: 60px;
+@use "../core/ui/mixins" as ui;
 
-  &__about{
+.index {
+  padding-bottom: 60px;
+  @include ui.xlg-block{
+    padding-bottom: 40px;
+  }
+
+  &__about {
     margin-top: 90px;
+    @include ui.md-block{
+      margin-top: 130px;
+    }
+    @include ui.sm-block{
+      margin-top: 100px;
+    }
   }
-  &__partners{
+
+  &__partners {
     margin-top: 60px;
+    @include ui.xlg-block {
+      margin-top: 40px;
+    }
   }
-  &__services{
+
+  &__services {
     margin-top: 50px;
+    @include ui.sm-block{
+      margin-top: 30px;
+    }
   }
-  &__reviews{
+
+  &__reviews {
     margin-top: 100px;
+    @include ui.xlg-block{
+      margin-top: 40px;
+    }
   }
-  &__form{
+
+  &__form {
     margin-top: 50px;
     scroll-margin-top: 50px;
+    @include ui.sm-block{
+      margin-top: 30px;
+    }
   }
-  &__contacts{
+
+  &__contacts {
     margin-top: 40px;
   }
-  &__desc{
+
+  &__desc {
     margin-top: 130px;
+    @include ui.md-block{
+      margin-top: 110px;
+    }
+    @include ui.sm-block{
+      margin-top: 90px;
+    }
   }
-  &__info{
+
+  &__info {
     margin-top: 70px;
+    @include ui.xlg-block{
+      margin-top: 50px;
+    }
+    @include ui.sm-block{
+      margin-top: 30px;
+    }
   }
-  &__ticker{
+
+  &__ticker {
     margin-top: 50px;
     padding: 17px 0;
     background: var(--blue);
+    @include ui.sm-block{
+      display: none;
+    }
 
-    p{
+    p {
       font-weight: 600;
       font-size: 32px;
       text-transform: uppercase;
       color: var(--white);
       white-space: nowrap;
       animation: marquee 15s infinite linear;
+      @include ui.xlg-block{
+        font-size: 26px;
+      }
+      @include ui.md-block{
+        font-size: 16px;
+      }
     }
   }
 }

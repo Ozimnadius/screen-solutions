@@ -1,6 +1,7 @@
 @use "../core/ui/mixins" as ui;
-.index-services{
-  &__title{
+
+.index-services {
+  &__title {
     padding-bottom: 40px;
     border-bottom: 1px solid var(--blue);
     margin-bottom: 50px;
@@ -10,40 +11,107 @@
     line-height: 1.1;
     text-transform: uppercase;
     text-align: center;
+    @include ui.lg-block {
+      padding-bottom: 30px;
+      margin-bottom: 40px;
+    }
+    @include ui.sm-block {
+      font-size: 24px;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
   }
-  &__rows{}
-  &__row{
-    display:grid;
-    grid-template-columns: repeat(2,1fr);
+
+  &__rows {
+    display: grid;
+    @include ui.md-block {
+      gap: 30px;
+    }
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     align-items: center;
     --order: 0;
+    --pl: 50px;
+    @include ui.xlg-block {
+      --pl: 40px;
+    }
+    @include ui.lg-block {
+      --pl: 0;
+    }
+    @include ui.sm-block{
+      grid-template-columns: 1fr;
+      gap: 15px;
+    }
 
-    &:nth-child(even){
+    &:nth-child(even) {
       --order: 1;
+      --pl: 50px;
+      @include ui.md-block {
+        --pl: 20px;
+      }
+      @include ui.sm-block {
+        --pl: 0;
+      }
     }
   }
-  &__left{
+
+  &__left {
     order: var(--order);
-    padding-left: 50px;
+    padding-left: var(--pl);
     padding-right: 50px;
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 30px;
+
+    @include ui.xlg-block {
+      padding-right: 40px;
+    }
+    @include ui.lg-block {
+      padding-right: 0;
+    }
+    @include ui.md-block {
+      gap: 15px;
+    }
+    @include ui.sm-block{
+      order: 1;
+      align-items: center;
+      text-align: center;
+    }
   }
-  &__name{
+
+  &__name {
     font-weight: 600;
     font-size: 36px;
     line-height: 1.2;
+    @include ui.xlg-block {
+      font-size: 32px;
+    }
+    @include ui.lg-block {
+      font-size: 28px;
+    }
+    @include ui.md-block {
+      font-size: 20px;
+    }
   }
-  &__btn{
+
+  &__btn {
     @include ui.btn-main;
     padding: 0 40px;
+    @include ui.md-block {
+      padding: 0 30px;
+    }
   }
-  &__right{}
-  &__img{
-    img{
+
+  &__right {
+  }
+
+  &__img {
+    img {
       width: 100%;
       border-radius: var(--border-radius);
     }

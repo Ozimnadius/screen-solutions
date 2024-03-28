@@ -3,102 +3,176 @@
 .footer {
   background: #EFEFEF;
 
-  &__top{
+  &__top {
     padding-top: 45px;
     padding-bottom: 70px;
     position: relative;
+    @include ui.sm-block{
+      padding-top: 30px;
+      padding-bottom: 50px;
+    }
   }
-  &__top-grid{
-    display:grid;
+
+  &__top-grid {
+    display: grid;
     grid-template-columns: 5fr 4fr 3fr;
     gap: 20px;
+    @include ui.xlg-block {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include ui.lg-block {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include ui.sm-block{
+        grid-template-columns: 1fr;
+    }
   }
-  &__up{
+
+  &__up {
     @include ui.hover-red;
     width: 60px;
     position: absolute;
     top: 60px;
     left: calc(100% + 70px);
     color: var(--blue);
+    @include ui.xlg-block {
+      left: initial;
+      right: 0;
+    }
+    @include ui.md-block {
+      display: none;
+    }
 
-    svg{
-      path{
+    svg {
+      path {
         fill: currentColor;
       }
-      circle{
+
+      circle {
         stroke: currentColor;
       }
     }
   }
-  &__left{
-    display:grid;
+
+  &__left {
+    display: grid;
     gap: 40px;
+    @include ui.lg-block {
+      grid-row: span 2;
+      gap: 20px;
+    }
+    @include ui.sm-block{
+        grid-row: span 1;
+    }
   }
-  &__logo{
-    a{
+
+  &__logo {
+    @include ui.xlg-block {
+      max-width: 220px;
+    }
+
+    a {
       @include ui.hover-opacity;
     }
   }
-  &__desc{
+
+  &__desc {
     max-width: 430px;
     font-size: 18px;
+    @include ui.lg-block {
+      font-size: 16px;
+    }
   }
-  &__center{
+
+  &__center {
     padding-top: 24px;
+    @include ui.sm-block{
+      padding-top: 0;
+    }
   }
-  &__phone{
-    a{
+
+  &__phone {
+    a {
       @include ui.hover-red;
       font-size: 34px;
       font-weight: 600;
       line-height: 1;
     }
   }
-  &__mail{
-    a{
+
+  &__mail {
+    a {
       @include ui.hover-red;
       font-size: 20px;
       font-weight: 500;
       color: var(--blue);
     }
   }
-  &__right{
+
+  &__right {
     padding-top: 24px;
     display: flex;
     flex-direction: column;
     align-items: start;
     gap: 16px;
+    @include ui.xlg-block {
+      padding-right: 70px;
+    }
+    @include ui.lg-block {
+      padding-top: 0;
+      padding-right: 100px;
+      gap: 6px;
+    }
   }
-  &__addr{
+
+  &__addr {
     font-size: 18px;
     font-weight: 500;
   }
-  &__map{
-    a{
+
+  &__map {
+    a {
       @include ui.hover-red;
       display: inline-block;
       font-size: 20px;
       text-decoration: underline;
       color: var(--blue);
+      @include ui.lg-block {
+        font-size: 16px;
+      }
     }
   }
-  &__bottom{
+
+  &__bottom {
     background: #1A62C4;
     padding: 20px 0;
     color: var(--white);
     font-size: 20px;
   }
-  &__bottom-row{
+
+  &__bottom-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include ui.md-block {
+      flex-direction: column;
+      gap: 6px;
+    }
   }
-  &__copyright{
-    font-size: 20px;
-  }
-  &__policy{
 
-    a{
+  &__copyright {
+    font-size: 20px;
+    @include ui.md-block{
+      order: 1;
+    }
+    @include ui.sm-block{
+      text-align: center;
+    }
+  }
+
+  &__policy {
+
+    a {
       font-size: 14px;
       text-decoration: underline;
     }

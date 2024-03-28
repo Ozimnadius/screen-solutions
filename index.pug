@@ -18,7 +18,11 @@ block content
                             <path d="M25.9646 40.4362L25.1708 52.3469C26.3372 52.3469 26.8526 51.8127 27.5036 51.1788L33.1076 45.7214L44.7662 54.3479C46.9118 55.5336 48.4604 54.9197 48.9948 52.3529L56.6483 16.2328C57.4319 13.0865 55.4507 11.6595 53.3982 12.5927L8.45702 29.9479C5.38936 31.1801 5.40725 32.8942 7.89785 33.6579L19.4308 37.2629L46.1307 20.3929C47.3911 19.6275 48.5479 20.039 47.5985 20.8829L25.964 40.4357L25.9646 40.4362Z" fill="#4094D4" />
                             </svg>
                     .index-banner__img
-                        img(src="/upload/images/content/index-banner/img.png" alt="Продажа и замена матриц")
+                        picture
+                            source(srcset="/upload/images/content/index-banner/img-mobile.png" media='(max-width: 767.98px)')
+                            source(srcset="/upload/images/content/index-banner/img.png" media='(max-width: 1279.98px)')
+                            source(srcset="/upload/images/content/index-banner/img.png" media='(max-width: 1919.98px)')
+                            img(src="/upload/images/content/index-banner/img.png" alt="Продажа и замена матриц")
 
 
                     .index-banner__wrap

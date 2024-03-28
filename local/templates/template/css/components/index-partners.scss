@@ -1,34 +1,72 @@
 @use "../core/ui/mixins" as ui;
-.index-partners{
+
+.index-partners {
   margin: 0 -45px;
   padding: 45px 25px;
   background: var(--white);
   border-radius: var(--border-radius);
+  @include ui.xlg-block {
+    margin: 0 -30px;
+  }
+  @include ui.lg-block {
+    margin: 0;
+    padding: 30px 5px;
+  }
+  @include ui.sm-block {
+    padding: 20px 10px;
+  }
 
-  &__title{
+  &__title {
     font-weight: 600;
     font-size: 36px;
     color: #2c72a7;
     text-align: center;
+    @include ui.xlg-block {
+      font-size: 32px;
+    }
+    @include ui.md-block {
+      font-size: 28px;
+    }
+    @include ui.sm-block{
+      font-size: 14px;
+    }
   }
-  &__slider{
+
+  &__slider {
     margin-top: 30px;
-    display:grid;
+    display: grid;
     grid-template-columns: 54px 1fr 54px;
     gap: 20px;
+    @include ui.lg-block {
+      gap: 10px;
+    }
+    @include ui.md-block {
+      margin-top: 20px;
+    }
+    @include ui.sm-block {
+      grid-template-columns: 20px 1fr 20px;
+      margin-top: 10px;
+    }
   }
-  &__swiper{
+
+  &__swiper {
     width: 100%;
   }
-  &__slide{
+
+  &__slide {
     border-radius: 14px;
     overflow: hidden;
-    img{
+    @include ui.lg-block {
+      border-radius: 10px;
+    }
+
+    img {
       display: block;
       width: 100%;
     }
   }
-  &__arr{
+
+  &__arr {
     @include ui.btn-arrow;
   }
 }
