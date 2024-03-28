@@ -1,3 +1,4 @@
+@use "../core/ui/mixins" as ui;
 .header {
   padding-top: 30px;
   padding-bottom: 20px;
@@ -9,6 +10,7 @@
   &__left{}
   &__logo{
     a{
+      @include ui.hover-opacity;
       display: block;
     }
   }
@@ -22,15 +24,18 @@
   &__item{
     padding: 8px 17px;
     border-radius: 100vmax;
-    border: 1px solid var(--Blue);
+    border: 1px solid var(--blue);
     position: relative;
+    font-weight: 600;
+    font-size: 18px;
+    @include ui.tr;
 
     &:before{
       content: '';
       display: block;
       width: 11px;
       height: 1px;
-      background: var(--Blue);
+      background: var(--blue);
       position: absolute;
       top: 50%;
       left: 100%;
@@ -42,6 +47,13 @@
         display: none;
       }
     }
+
+    &:hover {
+        @media (hover: hover) and (pointer: fine) {
+          border-color: var(--red);
+          color: var(--red);
+        }
+    }
   }
   &__right{
     display: flex;
@@ -50,8 +62,8 @@
     gap: 4px;
   }
   &__phone{
-
     a{
+      @include ui.hover-red;
       font-weight: 600;
       font-size: 34px;
       line-height: 1;
@@ -59,13 +71,13 @@
     }
   }
   &__callback{
-
     a{
+      @include ui.hover-red;
       font-weight: 600;
       font-size: 18px;
       line-height: 1;
       text-decoration-line: underline;
-      color: var(--Blue);
+      color: var(--blue);
       display: block;
     }
   }

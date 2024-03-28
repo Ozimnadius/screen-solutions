@@ -1,0 +1,64 @@
+@use "../core/ui/mixins" as ui;
+@use "sass:math";
+.index-about{
+  display:grid;
+  grid-template-columns: repeat(2,1fr);
+  gap: 20px;
+  align-items: center;
+
+  &__left{}
+  &__video{
+    position: relative;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    display: block;
+
+    &:before{
+      content: '';
+      display: block;
+      padding-top: math.percentage(math.div(402,660));
+    }
+
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__btn{
+    @include ui.hover-opacity;
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: var(--white);
+    @include ui.tr;
+
+  }
+  &__btn-svg{}
+  &__btn-name{
+    font-weight: 600;
+    font-size: 15px;
+    text-decoration: underline;
+  }
+  &__right{
+    padding-left: 60px;
+  }
+  &__title{
+    font-weight: 600;
+    font-size: 26px;
+  }
+  &__content{
+    @include ui.content;
+    p{
+      font-weight: 500;
+      font-size: 16px;
+    }
+  }
+}

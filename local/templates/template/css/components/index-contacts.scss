@@ -1,0 +1,84 @@
+@use "../core/ui/mixins" as ui;
+@use "sass:math";
+.index-contacts {
+  &__title {
+    font-weight: 500;
+    font-size: 40px;
+    margin-bottom: 35px;
+    text-align: center;
+  }
+
+  &__row {
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+  }
+
+  &__left {
+  }
+
+  &__map {
+    position: relative;
+    width: 100%;
+    height: 678px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 2px solid var(--blue);
+
+    #index-map {
+      position: absolute;
+      inset: 0;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+
+      [class*="copyrights-pane"] {
+        display: none !important;
+      }
+
+      [class*="ground-pane"] {
+        filter: grayscale(1);
+      }
+    }
+  }
+
+  &__right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    padding: 20px 80px;
+    background: url("/upload/images/content/index-contacts/bg.jpg") center center no-repeat;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  &__company {
+    color: var(--white);
+  }
+
+  &__name {
+    font-weight: 500;
+    font-size: 36px;
+    margin-bottom: 6px;
+  }
+
+  &__addr {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
+
+  &__phone {
+    a{
+      @include ui.hover-red;
+      font-weight: 600;
+      font-size: 36px;
+    }
+  }
+
+  &__mail {
+    a{
+      @include ui.hover-red;
+      font-size: 23px;
+    }
+  }
+}

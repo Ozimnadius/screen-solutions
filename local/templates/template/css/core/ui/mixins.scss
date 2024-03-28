@@ -109,7 +109,7 @@ $break_xs: 575.98px;
       list-style: disc;
 
       &::marker {
-        color: var(--Red);
+        color: var(--red);
       }
     }
   }
@@ -129,12 +129,12 @@ $break_xs: 575.98px;
   }
 
   a {
-    color: var(--Red);
+    color: var(--blue);
     text-decoration: underline;
 
     &:hover {
       @media (hover: hover) and (pointer: fine) {
-        color: var(--Red-2);
+        color: var(--red);
       }
     }
   }
@@ -151,4 +151,73 @@ $break_xs: 575.98px;
 
 @mixin mb($value) {
   margin-bottom: calc(var(--spacing) * $value);
+}
+
+@mixin hover-red {
+  @include tr;
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      color: var(--red);
+    }
+  }
+}
+
+@mixin hover-opacity {
+  @include tr;
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      opacity: .8;
+    }
+  }
+}
+
+@mixin btn {
+  font-weight: 500;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 39px;
+  border-radius: 100vmax;
+  @include tr;
+
+  svg {
+
+  }
+}
+
+@mixin btn-main {
+  @include btn;
+  background-color: var(--blue);
+  color: var(--white);
+
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      background-color: var(--red);
+      color: var(--white);
+    }
+  }
+}
+
+@mixin btn-white{
+  @include btn;
+  background: var(--white);
+  color: var(--black);
+
+  &:hover {
+    @media (hover: hover) and (pointer: fine) {
+      background-color: var(--red);
+      color: var(--white);
+    }
+  }
+}
+
+@mixin btn-arrow {
+  @include hover-red;
+  color: var(--blue);
+  svg {
+    path{
+      fill: currentColor;
+    }
+  }
 }

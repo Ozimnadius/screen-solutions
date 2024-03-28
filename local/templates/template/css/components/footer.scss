@@ -14,16 +14,31 @@
     gap: 20px;
   }
   &__up{
+    @include ui.hover-red;
     width: 60px;
     position: absolute;
     top: 60px;
     left: calc(100% + 70px);
+    color: var(--blue);
+
+    svg{
+      path{
+        fill: currentColor;
+      }
+      circle{
+        stroke: currentColor;
+      }
+    }
   }
   &__left{
     display:grid;
     gap: 40px;
   }
-  &__logo{}
+  &__logo{
+    a{
+      @include ui.hover-opacity;
+    }
+  }
   &__desc{
     max-width: 430px;
     font-size: 18px;
@@ -33,6 +48,7 @@
   }
   &__phone{
     a{
+      @include ui.hover-red;
       font-size: 34px;
       font-weight: 600;
       line-height: 1;
@@ -40,9 +56,10 @@
   }
   &__mail{
     a{
+      @include ui.hover-red;
       font-size: 20px;
       font-weight: 500;
-      color: var(--Blue);
+      color: var(--blue);
     }
   }
   &__right{
@@ -58,16 +75,17 @@
   }
   &__map{
     a{
+      @include ui.hover-red;
       display: inline-block;
       font-size: 20px;
       text-decoration: underline;
-      color: var(--Blue);
+      color: var(--blue);
     }
   }
   &__bottom{
     background: #1A62C4;
     padding: 20px 0;
-    color: var(--White);
+    color: var(--white);
     font-size: 20px;
   }
   &__bottom-row{

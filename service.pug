@@ -1,0 +1,123 @@
+extends src/core/main
+
+block variables
+    - var title = 'УТИЛИЗАЦИЯ СКЛАДА ТЕЛЕВИЗОРОВ';
+    - var mainPage = true;
+    - var showTitle = false;
+    - var contentPage = false;
+    - var showAside = false;
+
+block content
+    .index
+        .index__banner
+            .container
+                .index-banner
+                    .index-banner__tg
+                        a(href="#")
+                            <svg width="69" height="70" viewBox="0 0 69 70" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M25.9646 40.4362L25.1708 52.3469C26.3372 52.3469 26.8526 51.8127 27.5036 51.1788L33.1076 45.7214L44.7662 54.3479C46.9118 55.5336 48.4604 54.9197 48.9948 52.3529L56.6483 16.2328C57.4319 13.0865 55.4507 11.6595 53.3982 12.5927L8.45702 29.9479C5.38936 31.1801 5.40725 32.8942 7.89785 33.6579L19.4308 37.2629L46.1307 20.3929C47.3911 19.6275 48.5479 20.039 47.5985 20.8829L25.964 40.4357L25.9646 40.4362Z" fill="#4094D4" />
+                            </svg>
+                    .index-banner__img
+                        img(src="/upload/images/content/index-banner/img2.png" alt="УТИЛИЗАЦИЯ СКЛАДА ТЕЛЕВИЗОРОВ")
+
+
+                    .index-banner__wrap
+                        .index-banner__title.index-banner__title--big УТИЛИЗАЦИЯ СКЛАДА ТЕЛЕВИЗОРОВ
+                        .index-banner__bottom
+                            button(type='button').index-banner__btn Подробнее
+        .index__desc
+            .container
+                .index-desc
+                    p Вы ищете новый телевизор, но не хотите переплачивать? У нас есть отличное предложение для вас! На нашем складе проходит распродажа телевизоров со скидками до 80%. Это идеальная возможность приобрести телевизор по выгодной цене
+                    img(src="/upload/images/content/index-desc/img.jpg" alt="lorem")
+                    p У нас в наличии телевизоры всех диагоналей и брендов. Вы можете выбрать именно тот телевизор, который подходит вам по качеству и цене. Все телевизоры новые и уценены, что позволяет вам сэкономить значительную сумму денег.
+                    p Распродажа проводится в связи с утилизацией склада, поэтому не упустите свой шанс получить качественный телевизор по лучшей цене. Все товары прошли тщательную проверку и имеют полный комплект аксессуаров.
+        .index__info
+            .container
+                .index-info
+                    .index-info__left
+                        .index-info__title
+                            | Не пропустите эту уникальную
+                            br
+                            i возможность!
+                    .index-info__right
+                        .index-info__desc Посетите наш сайт и выберите свой новый телевизор прямо сейчас.
+                        a(href="#").index-info__btn Перейти в каталог
+        .index__ticker
+            p Поторопитесь, предложение ограничено!   Поторопитесь, предложение ограничено!   Поторопитесь, предложение ограничено! Поторопитесь, предложение ограничено! Поторопитесь, предложение ограничено!
+        .index__partners
+            .container
+                .index-partners
+                    .index-partners__title Сотрудничаем с ведущими мировыми производителями
+                    .index-partners__slider
+                        button(type='button').index-partners__arr.index-partners__prev
+                            <svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M4.50049 27.8685C4.50049 33.8359 6.87102 39.5589 11.0906 43.7784C15.3102 47.998 21.0331 50.3685 27.0005 50.3685C29.9552 50.3685 32.881 49.7866 35.6109 48.6558C38.3407 47.5251 40.8211 45.8678 42.9104 43.7784C47.13 39.5589 49.5005 33.8359 49.5005 27.8685C49.5005 21.9012 47.13 16.1782 42.9104 11.9586C38.6908 7.73906 32.9679 5.36853 27.0005 5.36853C24.0457 5.36853 21.1199 5.95051 18.3901 7.08124C15.6603 8.21197 13.1799 9.86931 11.0906 11.9586C9.00127 14.0479 7.34393 16.5283 6.2132 19.2582C5.08247 21.988 4.50049 24.9138 4.50049 27.8685ZM31.5005 41.3685L18.0005 27.8685L31.5005 14.3685L34.6505 17.5185L24.3005 27.8685L34.6505 38.2185L31.5005 41.3685Z" fill="#4094D4" />
+                            </svg>
+                        .index-partners__swiper.swiper
+                            .swiper-wrapper
+                                each i in [1,2,3,4,5,6]
+                                    .index-partners__slide.swiper-slide
+                                        img(src=`/upload/images/content/index-partners/${i}.jpg` alt="Partner")
+                        button(type='button').index-partners__arr.index-partners__next
+                            <svg width="54" height="55" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M49.5 27.8685C49.5 33.8359 47.1295 39.5589 42.9099 43.7784C38.6903 47.998 32.9674 50.3685 27 50.3685C24.0453 50.3685 21.1194 49.7866 18.3896 48.6558C15.6598 47.5251 13.1794 45.8678 11.0901 43.7784C6.87053 39.5589 4.5 33.8359 4.5 27.8685C4.5 21.9012 6.87053 16.1782 11.0901 11.9586C15.3097 7.73906 21.0326 5.36853 27 5.36853C29.9547 5.36853 32.8806 5.95051 35.6104 7.08124C38.3402 8.21197 40.8206 9.86931 42.9099 11.9586C44.9992 14.0479 46.6566 16.5283 47.7873 19.2582C48.918 21.988 49.5 24.9138 49.5 27.8685ZM22.5 41.3685L36 27.8685L22.5 14.3685L19.35 17.5185L29.7 27.8685L19.35 38.2185L22.5 41.3685Z" fill="#4094D4" />
+                            </svg>
+
+        .index__contacts
+            .container
+                .index-contacts
+                    .index-contacts__title Мы находимся здесь
+                    .index-contacts__row
+                        .index-contacts__left
+                            .index-contacts__map
+                                #index-map
+                        .index-contacts__right
+                            .index-contacts__company
+                                .index-contacts__name ООО «СкринСолюшинс»:
+                                .index-contacts__addr Россия, Москва, 119415, г. Москва, ул. Удальцова д. 1А. Бизнес Центр, 8 этаж
+                                .index-contacts__phone
+                                    a(href="tel:+7(888)8888888") +7 (888) 888 88 88
+                                .index-contacts__mail
+                                    a(href="mailto:inbox@screensolutions.ru") inbox@screensolutions.ru
+        .index__form#callback
+            .container
+                form(
+                    action='/ajax/sendForm.php'
+                    method='post'
+                    data-event="submit.sendForm"
+                ).index-form
+                    .index-form__left
+                        .index-form__title Остались вопросы?
+                        .index-form__desc Оставьте свои контактные данные и наши специалисты свяжутся с Вами в ближайшее время
+                    .index-form__right
+                        input(
+                            type="hidden"
+                            name="params"
+                            value="{'EVENT_NAME': 'SEND_FORM', 'FORM_NAME': 'Обратная связь', 'FIELDS': {'name': 'Имя', 'tel': 'Телефон',}}"
+                        )
+                        .index-form__fields
+                            .index-form__field
+                                input(
+                                    type='text'
+                                    name='name'
+                                    placeholder='Ваше имя'
+                                )
+                            .index-form__field
+                                input(
+                                    type='tel'
+                                    name='tel'
+                                    placeholder='Номер телефона'
+                                    required
+                                )
+
+                        .index-form__accept
+                            input(
+                                type='checkbox'
+                                name='accept'
+                                checked
+                                required
+                            )
+                            label Даю согласие на обработку персональные данных
+                        button(type='submit').index-form__submit Отправить
+

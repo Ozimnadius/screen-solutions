@@ -1,0 +1,27 @@
+.index-reviews {
+  &__title{
+    font-weight: 500;
+    font-size: 40px;
+    padding-bottom: 34px;
+    margin-bottom: 40px;
+    border-bottom: 2px solid var(--blue);
+    text-align: center;
+  }
+  &__items{
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+  }
+  &__item{
+    display:grid;
+    gap: 20px;
+  }
+  &__name{
+    font-weight: 500;
+    font-size: 24px;
+  }
+  &__desc{
+    font-size: 18px;
+    color: #3f3f3f;
+  }
+}

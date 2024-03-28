@@ -1,0 +1,52 @@
+.index{
+  padding-bottom: 60px;
+
+  &__about{
+    margin-top: 90px;
+  }
+  &__partners{
+    margin-top: 60px;
+  }
+  &__services{
+    margin-top: 50px;
+  }
+  &__reviews{
+    margin-top: 100px;
+  }
+  &__form{
+    margin-top: 50px;
+    scroll-margin-top: 50px;
+  }
+  &__contacts{
+    margin-top: 40px;
+  }
+  &__desc{
+    margin-top: 130px;
+  }
+  &__info{
+    margin-top: 70px;
+  }
+  &__ticker{
+    margin-top: 50px;
+    padding: 17px 0;
+    background: var(--blue);
+
+    p{
+      font-weight: 600;
+      font-size: 32px;
+      text-transform: uppercase;
+      color: var(--white);
+      white-space: nowrap;
+      animation: marquee 15s infinite linear;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}

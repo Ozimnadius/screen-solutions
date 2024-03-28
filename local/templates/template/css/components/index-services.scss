@@ -1,0 +1,51 @@
+@use "../core/ui/mixins" as ui;
+.index-services{
+  &__title{
+    padding-bottom: 40px;
+    border-bottom: 1px solid var(--blue);
+    margin-bottom: 50px;
+
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 1.1;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  &__rows{}
+  &__row{
+    display:grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 20px;
+    align-items: center;
+    --order: 0;
+
+    &:nth-child(even){
+      --order: 1;
+    }
+  }
+  &__left{
+    order: var(--order);
+    padding-left: 50px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+  }
+  &__name{
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  &__btn{
+    @include ui.btn-main;
+    padding: 0 40px;
+  }
+  &__right{}
+  &__img{
+    img{
+      width: 100%;
+      border-radius: var(--border-radius);
+    }
+  }
+}
